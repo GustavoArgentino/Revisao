@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    article {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    article h2 {
+      margin-bottom: 10px;
+    }
+
+    article p {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <title>Postagens - Meu Blog</title>
+</head>
+<body>
+
+  <header>
+    <h1>Meu Blog</h1>
+    <nav>
+      <ul>
+        <li><a onclick="home()">Início</a></li>
+        <li><a onclick="postagens()">Postagens</a></li>
+        <li><a onclick="sobre()">Sobre</a></li>
+        <li><a onclick="contato()">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="blog-posts">
+    <article>
+      <h2>Título da Postagem 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo vel libero feugiat tincidunt et eget elit.</p>
+      <a href="#">Leia mais</a>
+    </article>
+
+    <article>
+      <h2>Título da Postagem 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo vel libero feugiat tincidunt et eget elit.</p>
+      <a href="#">Leia mais</a>
+    </article>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Meu Blog. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function contato() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "contato";
+    }
+
+    function postagens() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "postagens";
+    }
+
+    function home() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "/";
+    }
+
+    function sobre() {
+        window.location.href = "sobre";
+    }
+</script>
+
+</body>
+</html>

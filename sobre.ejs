@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    section {
+      margin: 20px;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .botoes{
+   border: 10px solid transparent;
+}
+  </style>
+ 
+</head>
+<body>
+
+  <header>
+    
+    <nav>
+      <ul>
+        <li><a onclick="home()">Início</a></li>
+        <li><a onclick="postagens()">Postagens</a></li>
+        <li><a onclick="sobre()">Sobre</a></li>
+        <li><a onclick="contato()">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about-content">
+    <h2>Sobre Nós</h2>
+    <p>
+      Bem-vindo ao Meu Blog, o lugar onde compartilhamos nossas paixões, experiências e pensamentos. Nosso objetivo é fornecer conteúdo interessante e informativo que inspire e envolva nossos leitores.
+    </p>
+
+    <p>
+      Desde a nossa criação, temos trabalhado arduamente para criar um espaço online que seja inclusivo, educativo e, acima de tudo, divertido. Esperamos que você aproveite o tempo gasto em nosso blog e encontre informações valiosas.
+    </p>
+
+    <p>
+      Fique à vontade para explorar nossos posts e entrar em contato conosco se tiver alguma pergunta ou feedback. Agradecemos sua visita!
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Meu Blog. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function contato() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "contato";
+    }
+
+    function postagens() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "postagens";
+    }
+
+    function home() {
+        // Altera a localização (URL) para a nova página
+        window.location.href = "/";
+    }
+
+    function sobre() {
+        window.location.href = "sobre";
+    }
+</script>
+
+</body>
+</html>
