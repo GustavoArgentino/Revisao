@@ -74,9 +74,31 @@ app.post('/login', (req, res) => {
   
   db.query(query, [username, password], (err, results) => {
   if (err) throw err;
-  
+  if (results.length > 0) {
+    req.session.loggedin = true;
+    req.session.username = username;
+    res.redirect('/contato');
  
+ } });
   });
+
+  app.post('/postagens', (req, res) => {
+    // Verifica se o usuário está logado
+    if (!req.session.loggedin) {
+      return res.redirect('/login'); // Redireciona para a página de login se não estiver logado
+    }
+  
+    const { name } = req.body; // Obtém os dados da postagem do corpo da solicitação
+  
+    // Insere a postagem no banco de dados
+    const sql = 'INSERT INTO postg (name, user_id) VALUES (?, ?)';
+    db.query(sql, [name, req.session.user_id], (err, result) => {
+      if (err) {
+        console.error('Erro ao inserir postagem:', err);
+        return res.redirect('/'); // Redireciona de volta para a página inicial em caso de erro
+      }
+      res.redirect('/'); // Redireciona de volta para a página inicial após a inserção bem-sucedida
+    });
   });
   
   // Rota para a página do painel
@@ -102,23 +124,7 @@ app.post('/login', (req, res) => {
   });
   });
 
-  app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    
-    const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
-    
-    db.query(query, [username, password], (err, results) => {
-    if (err) throw err;
-    
-    if (results.length > 0) {
-    req.session.loggedin = true;
-    req.session.username = username;
-    res.redirect('/dash');
-    } else {
-    res.send('Credenciais incorretas. <a href="/">Tente novamente</a>');
-    }
-    });
-    });
+ 
 
    
 
